@@ -1,0 +1,187 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: monospace;
+    text-align: center;
+    
+
+}
+
+h1{
+    margin-bottom: 50px;
+    margin-top: 0;
+    height: 150px;
+    font-size: 4em;
+    font-weight: bolder;
+    letter-spacing: 5px;
+    text-shadow: 5px 5px 10px black;
+    padding-top: 50px;
+    color: rgb(255, 65, 31);
+    background: url(./pattern.png);
+
+
+    /* background: url(./background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+
+}
+p{
+    margin: 50px 0;
+}
+table{
+    font-size: 2.5em;
+    text-align: center;
+    margin: auto;
+    width: 60%;
+    height: 200px;
+
+}
+
+thead{
+
+    font-weight: 800;
+}
+
+span{
+    display: inline-block;
+    padding-top: 25px;
+    width: 180px;
+    height: 80px;
+    border: 2px solid red;
+    border-radius: 10px;
+}
+h2{
+    text-align: center;
+    margin: 50px 150px 50px 150px;
+    line-height: 1.5em;
+    padding: 0;
+    border:2px solid #b2ebf2;
+    color: #dd2c00;
+}
+#line_top_x{
+    margin: 0 auto;
+    padding: 0;
+    width: 80%;
+    height: 1000px;
+}
+#series_chart_div{
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    height: 1000px;
+}
+#total{
+    border: 4px solid yellow;
+}
+#active{
+    border: 4px solid red;
+}
+#recovered{
+    border: 4px solid yellowgreen;
+}
+#deaths{
+    border: 4px solid black;
+}
+#totalHead{
+    color: yellow;
+}
+#activeHead{
+    color: red;
+}
+#recoveredHead{
+    color: greenyellow;
+}
+#deathsHead{
+    color: black;
+}
+
+#total:hover{
+     transform: translate(5px,5px);
+     box-shadow: -5px -5px 5px black;
+     color: yellow;
+     text-shadow: 0px 0px 1px black;
+     text-shadow: -1px 0px 1px black;
+     text-shadow: 1px 0px 1px black;
+     text-shadow: 0px -1px 1px black;
+     text-shadow: 0px 1px 1px black;
+
+}
+#active:hover{
+     transform: translate(5px,5px);
+     box-shadow: -5px -5px 5px black;
+     color: red;
+     text-shadow: 0px 0px 1px black;
+     text-shadow: -1px 0px 1px black;
+     text-shadow: 1px 0px 1px black;
+     text-shadow: 0px -1px 1px black;
+     text-shadow: 0px 1px 1px black;
+}
+#recovered:hover{
+     transform: translate(5px,5px);
+     box-shadow: -5px -5px 5px black;
+     color: greenyellow;
+     text-shadow: 0px 0px 1px black;
+     text-shadow: -1px 0px 1px black;
+     text-shadow: 1px 0px 1px black;
+     text-shadow: 0px -1px 1px black;
+     text-shadow: 0px 1px 1px black;
+}
+#deaths:hover{
+     transform: translate(5px,5px);
+     box-shadow: -5px -5px 5px black;
+     color: darkgray;
+     text-shadow: 0px 0px 1px black;
+     text-shadow: -1px 0px 1px black;
+     text-shadow: 1px 0px 1px black;
+     text-shadow: 0px -1px 1px black;
+     text-shadow: 0px 1px 1px black;
+}
+
+@media (max-width : 1000px)
+{
+    h1{
+        margin-bottom: 20px;
+        margin-top: 0;
+        height: 100px;
+        font-size: 2em;
+        font-weight: bolder;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 8px black;
+        padding-top: 30px;
+        color: rgb(255, 65, 31);
+        background: url(./pattern.png);
+    
+    
+    }
+    table{
+        font-size: 1.5em;
+        text-align: center;
+        margin: auto;
+        width: 60%;
+        height: 200px;
+    
+    }
+    
+    span{
+        display: inline-block;
+        padding-top: 20px;
+        width: 100px;
+        height: 70px;
+        border: 2px solid red;
+        border-radius: 10px;
+    }
+    h2{
+        text-align: center;
+        margin: 0 10px;
+        line-height: 1.2em;
+        padding: 0;
+        border:2px solid #b2ebf2;
+        color: #dd2c00;
+    }
+
+}

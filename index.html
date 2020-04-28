@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19 Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>India Covid-19 Update</h1>
+    <table>
+        <thead>
+            <td id="totalHead">Total Cases</td>
+            <td id="activeHead">Active Cases</td>
+            <td id="recoveredHead">Recovered</td>
+            <td id="deathsHead">Deaths</td>
+        </thead>
+        <tbody>
+            <td ><span id="total"></span></td>
+            <td ><span id="active"></span></td>
+            <td ><span id="recovered"></span></td>
+            <td ><span id="deaths"></span></td>
+        </tbody>
+    </table>
+    <h2>Buuble Chart to demonstrate number of cases in each state of India</h2>
+
+        <div id="series_chart_div"></div>
+
+    
+    <h2>Line Chart showing number of patients died, recovered and active patients from 30th Jan</h2>
+
+        <div id="line_top_x"></div>
+
+    
+    <p>Source : <a href="https://www.covid19india.org/">India Covid-19 Tracker</a></p>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
