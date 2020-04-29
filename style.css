@@ -23,12 +23,6 @@ h1{
     color: rgb(255, 65, 31);
     background: url(./pattern.png);
 
-
-    /* background: url(./background.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; */
-
 }
 p{
     margin: 50px 0;
@@ -63,12 +57,37 @@ h2{
     border:2px solid #b2ebf2;
     color: #dd2c00;
 }
-#line_top_x{
-    margin: 0 auto;
-    padding: 0;
-    width: 80%;
-    height: 1000px;
+.testing{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px auto;
 }
+#tested, #positive{
+    width: 35%;
+    height: 350px;
+}
+.lineCharts{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#deceased, #cases, #recoveredChart{
+    border-radius: 20px;
+    margin: 0 auto;
+    padding: 10px;
+    width: 30%;
+    height: 400px;
+}
+#deceased{
+    border: 4px solid tomato;
+}
+#cases{
+    border: 4px solid steelblue;
+}
+#recoveredChart{
+    border: 4px solid greenyellow;
+}
+
 #series_chart_div{
     margin: 0 auto;
     padding: 0;
