@@ -5,7 +5,7 @@ $.getJSON(
     'https://api.covid19india.org/data.json', 
     function(data) {
         objectToArray(data.statewise); 
-        
+        chartTesting(data.tested);
         chartDeceased(data.cases_time_series);
         chartCases(data.cases_time_series);
         chartRecovered(data.cases_time_series);
@@ -35,7 +35,7 @@ var options = {
          'and Total Cases of Indian States (Live)',
   hAxis: {title: 'Recovered'},
   vAxis: {title: 'Died'},
-  colorAxis :{colors:['green','yellow','red']},
+  colorAxis :{colors:['#0c9463','#ffd31d','#e32249']},
   backgroundColor : 'none',
   bubble: {textStyle: {fontSize: 12}}      };
 
@@ -45,13 +45,124 @@ chart.draw(data, options);
 }
 
 /*******************Line Charts******************/
-
-
+var testingTotal = [];
+var testingPositive = [];
 var recoveredArray = [];
 var casesArray = [];
 var deceasedArray = [];
 
 
+/******************Testings***************/
+function chartTesting(data){
+  //Updating Counter
+  var testdone = document.querySelector("#testsDone");
+  var plus = document.querySelector("#plus");
+  var tillDate = document.querySelector("#date");
+  testdone.textContent = data[data.length-1].totalsamplestested;
+  plus.textContent = '+' + (data[data.length-1].totalsamplestested - data[data.length-2].totalsamplestested);
+  var tempDate = data[data.length-1].updatetimestamp.split(" ");
+  tillDate.textContent = tempDate.shift();
+  //Assigning data to array for charts
+    for(let i=0;i<data.length;i++){
+    if(data[i].totalsamplestested!==""){
+        var date = data[i].updatetimestamp.split(" ");
+        date = date.shift();
+        var total;
+        if(i==0) 
+          total =  parseInt(data[i].totalsamplestested)
+        else
+           total = parseInt(data[i].totalsamplestested - lastTotal );
+        var arr = [date,total];
+        testingTotal.push(arr);
+        var lastTotal = data[i].totalsamplestested;
+    }
+    if(data[i].testpositivityrate!==""){
+        var positive = parseFloat(data[i].testpositivityrate);
+        let arr1 = [date,positive]
+        testingPositive.push(arr1);
+    }
+  }
+}
+//Total
+google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(testingChartTotal);
+
+    function testingChartTotal() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Date');
+      data.addColumn('number', 'Tested');
+
+      data.addRows(testingTotal);
+
+      var options = {
+        colors:'red',
+        backgroundColor : 'none',
+        hAxis: {
+          textStyle: {
+              color: "#ffa34d",
+              fontName: "sans-serif",
+              fontSize: 10,
+              bold: false,
+              italic: false
+          }
+      },
+      vAxis: {
+        textStyle: {
+            color: "#ffa34d",
+            fontName: "sans-serif",
+            fontSize: 10,
+            bold: false,
+            italic: false
+        }
+    },
+    colors: '#ffa34d',
+    };
+
+      var chart = new google.charts.Line(document.getElementById('tested'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+//Positivity Rate
+
+google.charts.load('current', {'packages':['line']});
+google.charts.setOnLoadCallback(testingChartPositive);
+
+function testingChartPositive() {
+
+var data = new google.visualization.DataTable();
+data.addColumn('string', 'Date');
+data.addColumn('number', 'Positivity Rate(%)');
+
+data.addRows(testingPositive);
+
+var options = {
+  backgroundColor : 'none',
+  hAxis: {
+    textStyle: {
+        color: "#00bdaa",
+        fontName: "sans-serif",
+        fontSize: 10,
+        bold: false,
+        italic: false
+    }
+},
+vAxis: {
+  textStyle: {
+      color: "#00bdaa",
+      fontName: "sans-serif",
+      fontSize: 10,
+      bold: false,
+      italic: false
+  }
+},
+colors: '#00bdaa',
+};
+
+var chart = new google.charts.Line(document.getElementById('positive'));
+
+chart.draw(data, google.charts.Line.convertOptions(options));
+}
 
 /******************Recovered**************/
 
@@ -86,7 +197,7 @@ google.charts.load('current', {'packages':['line']});
         backgroundColor : 'none',
         hAxis: {
           textStyle: {
-              color: "#000",
+              color: "#8cba51",
               fontName: "sans-serif",
               fontSize: 12,
               bold: true,
@@ -95,7 +206,7 @@ google.charts.load('current', {'packages':['line']});
       },
       vAxis: {
         textStyle: {
-            color: "#000",
+            color: "#8cba51",
             fontName: "sans-serif",
             fontSize: 12,
             bold: true,
@@ -143,7 +254,7 @@ google.charts.load('current', {'packages':['line']});
         backgroundColor : 'none',
         hAxis: {
           textStyle: {
-              color: "#000",
+              color: "#f64b3c",
               fontName: "sans-serif",
               fontSize: 12,
               bold: true,
@@ -152,7 +263,7 @@ google.charts.load('current', {'packages':['line']});
       },
       vAxis: {
         textStyle: {
-            color: "#000",
+            color: "#f64b3c",
             fontName: "sans-serif",
             fontSize: 12,
             bold: true,
@@ -197,7 +308,7 @@ google.charts.load('current', {'packages':['line']});
         backgroundColor : 'none', 
         hAxis: {
           textStyle: {
-              color: "#000",
+              color: "#035aa6",
               fontName: "sans-serif",
               fontSize: 12,
               bold: true,
@@ -206,7 +317,7 @@ google.charts.load('current', {'packages':['line']});
       },
       vAxis: {
         textStyle: {
-            color: "#000",
+            color: "#035aa6",
             fontName: "sans-serif",
             fontSize: 12,
             bold: true,
