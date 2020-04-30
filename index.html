@@ -22,9 +22,25 @@
             <td ><span id="deaths"></span></td>
         </tbody>
     </table>
-    <h2>Buuble Chart to demonstrate number of cases in each state of India</h2>
 
-        <div id="series_chart_div"></div>
+
+    <h2 id="bChart">Bubble Chart</h2>
+    <h2 id="doubleChart">Doubling Time Of Covid-19 Cases</h2>
+
+        <div class="firstChartArea">
+            <div id="bubbleBorder">
+                <div id="series_chart_div"></div>
+            </div>
+            <div class="dRateArea">
+                <span id="drateText">Doubling Time of Covid-19 Cases according to the average growth from last 7 days</span>
+                <div class="chartArea">
+                    <span id="days">14 <br> Days</span>
+                    <div id="dRateChart"></div>
+                 </div>
+            </div>
+          
+        </div>
+    
         <div class="testing">
             <div id="totalTested">
                 <span id="st">Samples Tested </span>
@@ -42,13 +58,13 @@
                         
         </div>
 
-    
-    <h2>Line Chart showing number of patients died, recovered and active patients</h2>
     <div class="lineCharts">
         <div id="cases"></div>
         <div id="deceased"></div>
         <div id="recoveredChart"></div>
     </div>
+   
+    
         
     
     <p>Source : <a href="https://www.covid19india.org/">India Covid-19 Tracker</a></p>
