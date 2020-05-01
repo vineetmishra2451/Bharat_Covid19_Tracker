@@ -5,27 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Covid-19 Tracker</title>
     <link rel="stylesheet" href="style.css">
+    <script src="/all.min.js"></script>
 </head>
 <body>
     <h1>India Covid-19 Update</h1>
-    <table>
-        <thead>
-            <td id="totalHead">Total Cases</td>
-            <td id="activeHead">Active Cases</td>
-            <td id="recoveredHead">Recovered</td>
-            <td id="deathsHead">Deaths</td>
-        </thead>
-        <tbody>
-            <td ><span id="total"></span></td>
-            <td ><span id="active"></span></td>
-            <td ><span id="recovered"></span></td>
-            <td ><span id="deaths"></span></td>
-        </tbody>
-    </table>
+    <div class="mainCounter">
+        <div id="headings">
+            <span id="totalHead">Total</span>
+            <span id="activeHead">Active</span>
+            <span id="recoveredHead">Recovered</span>
+            <span id="deathsHead">Deaths</span>
+        </div>
+        <div id="numbers">
+            <span id="total"></span>
+            <span id="active"></span>
+            <span id="recovered"></span>
+            <span id="deaths"></span>
+        </div>
+        <div id="update">
+            <span id="plusTotal"></span>
+            <span id="plusActive"></span>
+            <span id="plusRecovered"></span>
+            <span id="plusDeaths"></span>
+        </div>
+    </div>
 
 
-    <h2 id="bChart">Bubble Chart</h2>
-    <h2 id="doubleChart">Doubling Time Of Covid-19 Cases</h2>
+    <h2 id="bChart"> <i class="fal fa-chart-scatter"></i> Bubble Chart</h2>
+    <h2 id="doubleChart"><i class="fal fa-analytics"></i> Doubling Time Of Covid-19 Cases</h2>
 
         <div class="firstChartArea">
             <div id="bubbleBorder">
@@ -34,16 +41,16 @@
             <div class="dRateArea">
                 <span id="drateText">Doubling Time of Covid-19 Cases according to the average growth from last 7 days</span>
                 <div class="chartArea">
-                    <span id="days">14 <br> Days</span>
+                    <span id="days"></span>
                     <div id="dRateChart"></div>
                  </div>
             </div>
           
         </div>
-    
+        <h2 id="testingHead"><i class="fal fa-chart-line"></i> Testing Charts</h2>
         <div class="testing">
             <div id="totalTested">
-                <span id="st">Samples Tested </span>
+                <span id="st">Samples Tested <i class="fad fa-vial"></i></span>
                 <div class="testNo">
                     <span id="testsDone"></span> 
                     <span id="plus"> </span>
@@ -58,6 +65,7 @@
                         
         </div>
 
+    <h2 id="cdrChart"><i class="fal fa-chart-area"></i> Cases,Deceased & Recovered Charts</h2>
     <div class="lineCharts">
         <div id="cases"></div>
         <div id="deceased"></div>

@@ -23,30 +23,78 @@ h1{
     background: url(./pattern.png);
 
 }
-p{
-    margin: 50px 0;
-}
-table{
-    font-size: 2.5em;
-    text-align: center;
-    margin: auto;
-    width: 60%;
-    height: 200px;
 
-}
-
-thead{
-
-    font-weight: 800;
-}
-
-#total, #active, #recovered, #deaths{
-    display: inline-block;
-    padding-top: 25px;
-    width: 180px;
-    height: 80px;
-    border: 2px solid red;
+.mainCounter{
+    width: 97%;
+    margin: 0 auto;
+    border: 4px solid seagreen;
     border-radius: 10px;
+}
+#headings{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 1em auto;
+}
+#numbers{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 1em auto 0 auto;
+
+}
+#update{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin:0 auto 1em auto;
+}
+#plusDeaths,#plusRecovered, #plusActive, #plusTotal{
+    width: 20%;
+    font-size: 1.2em;
+}
+#plusDeaths{
+    color: tomato;
+}
+#plusRecovered{
+    color: green;
+}
+#plusTotal{
+    color: steelblue;
+}
+#deaths, #recovered, #active, #total{
+    width: 20%;
+    font-size: 2.5em;
+    font-weight: 600;
+} 
+#deathsHead, #recoveredHead, #activeHead, #totalHead{
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    width: 20%;
+    height: 1.2em;
+    font-size: 2em;
+    font-weight: 100;
+}
+#deathsHead{
+    color: tomato;
+}
+#recoveredHead{
+    color: green;
+}
+#activeHead{
+    color: #ffa34d;
+}
+#totalHead{
+    color: steelblue;
+}
+.totalUp{
+    color: steelblue;
+}
+.recoveredUp{
+    color: green;
+}
+.deathsUp{
+    color: tomato;
 }
 
 #bChart, #doubleChart{
@@ -56,27 +104,33 @@ thead{
     font-size: 2em;
     font-weight: 300;
 }
+#bChart{
+    color: #844685;
+}
+#doubleChart{
+    color: #ffa34d;
+}
 #series_chart_div{
     padding: 0;
     margin: 20px;
     width: 95%;
     height: 600px;
-    border: 3px solid sandybrown;
+    border: 3px solid #e43f5a;
     border-radius: 20px;
 }
 #bubbleBorder{
     width: 60%;
-    border: 3px solid rebeccapurple;
+    border: 5px solid rebeccapurple;
     border-right: 0;
     border-radius: 20px 0 0 20px;
 }
 .firstChartArea{
     display: flex;
-    width: 95%;
+    width: 97%;
     margin: 0 auto;
 }
 .dRateArea{
-    border: 3px solid salmon;
+    border: 5px solid #dd7631;
     border-left: 0;
     border-radius: 0 20px 20px 0;
     padding: 10px;
@@ -90,38 +144,43 @@ thead{
     height: 50px;
     font-size: 2em;
     line-height: 1.3em;
-    text-decoration:1px underline seagreen ;
+    color: #844685;
 }
 .chartArea{
     height: 90%;
     display: flex;
     justify-content: flex-end;
-    align-items: end;
+    align-items: flex-end;
 }
 #days{
+    color: #e43f5a;
     align-self: center;
-    margin-top: 3em;
-    border: 2px solid seagreen;
+    margin-top: 2em;
+    border: 3px solid #6886c5;
     border-right: 0;
     border-radius: 10% 0 0 10%;
-    padding: 5px 20px 5px 5px;
     text-align: center;
-    font-size: 2.5em;
+    font-size: 4em;
 }
 #dRateChart{
-    border: 2px solid salmon;
+    border: 3px solid #6886c5;
     padding: 10px;
     border-radius:5%;
     width: 80%;
     height: 420px;
 }
-
+#testingHead{
+    text-align: left;
+    margin: 1em 0 0 1em;
+    font-size: 2em;
+    color: #00bdaa;
+}
 .testing{
     width: 98%;
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
-    margin: 50px auto;
+    margin: 0 auto 50px auto;
 }
 #totalTested{
     border:6px solid #fa697c;
@@ -141,9 +200,9 @@ thead{
 
 #st{
     color: #fa697c;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-weight: 600;
-    margin-left:20% ;
+    margin-left: 2%;
 }
 #testsDone{
     
@@ -164,14 +223,14 @@ thead{
 #ason{
     color: gray;
     display: block;
-    padding-top: 4em;
-    font-size: 1rem;
+    padding-top: 2em;
+    font-size: 2rem;
 }
 #date{
     font-weight: 500;
     font-size: 2rem;
     display: inline-block;
-    margin-left: 50%;
+    margin-left: 30%;
     color: #6b778d;
 }
 .border{
@@ -198,6 +257,12 @@ thead{
     border-radius: 0 20px 20px 0;
     border-left: 0;
 }
+#cdrChart{
+    font-size: 2em;
+    text-align: left;
+    margin:0 auto 0.5em 1em;
+    color: #6886c5;
+}
 .lineCharts{
     display: flex;
     flex-wrap: wrap;
@@ -218,116 +283,4 @@ thead{
 }
 #recoveredChart{
     border: 4px solid greenyellow;
-}
-
-
-#total{
-    border: 4px solid yellow;
-}
-#active{
-    border: 4px solid red;
-}
-#recovered{
-    border: 4px solid yellowgreen;
-}
-#deaths{
-    border: 4px solid black;
-}
-#totalHead{
-    color: yellow;
-}
-#activeHead{
-    color: red;
-}
-#recoveredHead{
-    color: greenyellow;
-}
-#deathsHead{
-    color: black;
-}
-
-#total:hover{
-     transform: translate(5px,5px);
-     box-shadow: -5px -5px 5px black;
-     color: yellow;
-     text-shadow: 0px 0px 1px black;
-     text-shadow: -1px 0px 1px black;
-     text-shadow: 1px 0px 1px black;
-     text-shadow: 0px -1px 1px black;
-     text-shadow: 0px 1px 1px black;
-
-}
-#active:hover{
-     transform: translate(5px,5px);
-     box-shadow: -5px -5px 5px black;
-     color: red;
-     text-shadow: 0px 0px 1px black;
-     text-shadow: -1px 0px 1px black;
-     text-shadow: 1px 0px 1px black;
-     text-shadow: 0px -1px 1px black;
-     text-shadow: 0px 1px 1px black;
-}
-#recovered:hover{
-     transform: translate(5px,5px);
-     box-shadow: -5px -5px 5px black;
-     color: greenyellow;
-     text-shadow: 0px 0px 1px black;
-     text-shadow: -1px 0px 1px black;
-     text-shadow: 1px 0px 1px black;
-     text-shadow: 0px -1px 1px black;
-     text-shadow: 0px 1px 1px black;
-}
-#deaths:hover{
-     transform: translate(5px,5px);
-     box-shadow: -5px -5px 5px black;
-     color: darkgray;
-     text-shadow: 0px 0px 1px black;
-     text-shadow: -1px 0px 1px black;
-     text-shadow: 1px 0px 1px black;
-     text-shadow: 0px -1px 1px black;
-     text-shadow: 0px 1px 1px black;
-}
-
-@media (max-width : 1000px)
-{
-    h1{
-        margin-bottom: 20px;
-        margin-top: 0;
-        height: 100px;
-        font-size: 2em;
-        font-weight: bolder;
-        letter-spacing: 2px;
-        text-shadow: 2px 2px 8px black;
-        padding-top: 30px;
-        color: rgb(255, 65, 31);
-        background: url(./pattern.png);
-    
-    
-    }
-    table{
-        font-size: 1.5em;
-        text-align: center;
-        margin: auto;
-        width: 60%;
-        height: 200px;
-    
-    }
-    
-    #deaths, #recovered, #active, #total{
-        display: inline-block;
-        padding-top: 20px;
-        width: 100px;
-        height: 70px;
-        border: 2px solid red;
-        border-radius: 10px;
-    }
-    h2{
-        text-align: center;
-        margin: 0 10px;
-        line-height: 1.2em;
-        padding: 0;
-        border:2px solid #b2ebf2;
-        color: #dd2c00;
-    }
-
 }
